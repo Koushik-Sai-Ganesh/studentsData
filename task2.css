@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Optional: dark background */
+    color: lightblue;        /* Optional: default text color */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    font-size: 2em;
+    margin: 20px;
+    color: lightblue;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#studentdata {
+    margin: 20px auto;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    color: lightblue;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid blue;
+}
+
+thead tr {
+    background-color: #0574f4ff;
+}
+
+tbody tr {
+    background-color: #050505ff;
+}
