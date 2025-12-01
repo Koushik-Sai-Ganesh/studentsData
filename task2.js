@@ -47,7 +47,7 @@ function loadData(){
         else if(avg >= 70) grade = "B";
         else if(avg >= 60) grade = "C";
         else grade = "Fail";
-
+        
         stable += `<tr style="background-color: #050505ff; color:lightblue;" align="center">
                         <td>${i+1}</td>
                         <td>${student.id}</td>
