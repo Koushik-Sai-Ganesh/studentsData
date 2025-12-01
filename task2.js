@@ -23,17 +23,17 @@ function loadData(){
     let stable = `<table border="1" cellspacing="0" cellpadding="5" style="border-color:blue; color:lightblue;">
                     <thead>
                         <tr style="background-color: #0574f4ff; color:lightblue;" align="center">
-                            <th style="width:50px; color:lightblue;">S#</th>
-                            <th style="width:100px; color:lightblue;">Student ID</th>
-                            <th style="width:300px; color:lightblue;">Student Name</th>
-                            <th style="width:75px; color:lightblue;">S1</th>
-                            <th style="width:75px; color:lightblue;">S2</th>
-                            <th style="width:75px; color:lightblue;">S3</th>
-                            <th style="width:75px; color:lightblue;">S4</th>
-                            <th style="width:75px; color:lightblue;">S5</th>
-                            <th style="width:75px; color:lightblue;">Total</th>
-                            <th style="width:75px; color:lightblue;">Average</th>
-                            <th style="width:75px; color:lightblue;">Grade</th>
+                            <th style="width:50px;">S#</th>
+                            <th style="width:100px;">Student ID</th>
+                            <th style="width:300px;">Student Name</th>
+                            <th style="width:75px;">S1</th>
+                            <th style="width:75px;">S2</th>
+                            <th style="width:75px;">S3</th>
+                            <th style="width:75px;">S4</th>
+                            <th style="width:75px;">S5</th>
+                            <th style="width:75px;">Total</th>
+                            <th style="width:75px;">Average</th>
+                            <th style="width:75px;">Grade</th>
                         </tr>
                     </thead>`;
     for(let i=0; i< students.length; i++){
@@ -47,10 +47,15 @@ function loadData(){
         else if(avg >= 70) grade = "B";
         else if(avg >= 60) grade = "C";
         else grade = "Fail";
-        
+
+        // ✅ Only Grade color changes
+        let gradeColor = "color:lightblue;";
+        if(grade === "Fail") gradeColor = "color:red;";
+        else if(grade === "A+") gradeColor = "color:yellow;";
+
         stable += `<tr style="background-color: #050505ff; color:lightblue;" align="center">
                         <td>${i+1}</td>
-                        <td>${student.id}</td>
+                        <td>${student.id}</td> <!-- ID always lightblue -->
                         <td>${student.name}</td>
                         <td>${student.s1}</td>
                         <td>${student.s2}</td>
@@ -59,7 +64,7 @@ function loadData(){
                         <td>${student.s5}</td>
                         <td>${total}</td>
                         <td>${avg.toFixed(1)}</td>
-                        <td>${grade}</td>
+                        <td style="${gradeColor}">${grade}</td> <!-- Grade color changes -->
                     </tr>`;
     }
     stable += `</table>`;
